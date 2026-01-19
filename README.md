@@ -37,22 +37,9 @@ The goal is to provide:
 
 ## 🧩 High-Level Architecture
 
-+-----------------------+
-|      Unity Layer      |
-|  (Rendering / Input)  |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-|   Simulation Bridge   |
-|  (Adapters & Binding) |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-|     Simulation Core   |
-|    (Pure C# / Data)   |
-+-----------------------+
+Unity Layer (Rendering, Input, Editor)
+        --> Simulation Bridge (Adapters & Binding)
+                --> Simulation Core (Pure C# / Data)
 
 
 - **Unity Layer**  
@@ -69,16 +56,17 @@ The goal is to provide:
 ## 📂 Project Structure (Expected)
 
 Assets/
-├─ Simulation/
-│ ├─ Core/ # Pure simulation logic
-│ ├─ Systems/ # Simulation systems
-│ └─ Data/ # Data definitions
-├─ Runtime/
-│ └─ Bridges/ # Unity ↔ Simulation adapters
-├─ Editor/
-│ └─ Tools/ # Debug & visualization tools
-└─ Samples/
-└─ Examples/
+- Simulation/
+  - Core/        # Pure simulation logic
+  - Systems/     # Simulation systems
+  - Data/        # Data definitions
+- Runtime/
+  - Bridges/     # Unity -> Simulation adapters
+- Editor/
+  - Tools/       # Debug & visualization tools
+- Samples/
+  - Examples/
+
 
 
 ---
